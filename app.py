@@ -40,15 +40,19 @@ def index():
             contactNow = contact_form(firstname+' '+lastname, email, message)
             db.session.add(contactNow)
             db.session.commit()
-            flash(f"We appreciate you reaching out to us!", "info")
+            flash("We appreciate you reaching out to us!", "info")
         else:
-            flash(f"Sorry Empty fields!", "danger")
+            flash("Sorry Empty fields!", "danger")
 
     return render_template('index.html')
 
 @app.route('/portfolio')
 def portfolio():
     return render_template('portfolio-page.html')
+
+@app.route('/portfolioII')
+def portfolioII():
+    return render_template('portfolioII-page.html')
 
 @app.route('/dashboard')
 def dashboard():
@@ -77,7 +81,7 @@ def admin():
             session["user"] = usrnm
             return redirect(url_for("dashboard"))
         else:
-            flash(f"Sorry! You entered wrong details.", "danger")
+            flash("Sorry! You entered wrong details.", "danger")
 
     return render_template('login.html')
 
@@ -85,7 +89,7 @@ def admin():
 def logout():
     if "user" in session:
         u = session["user"]
-        flash(f"You were logged out", "info")
+        flash("You were logged out", "info")
     session.pop("user", None)
     return redirect(url_for("admin"))
 
@@ -93,5 +97,3 @@ if __name__ == '__main__':
     db.create_all()
     app.run(debug=True)
     
-
-
