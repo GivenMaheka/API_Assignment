@@ -1,0 +1,36 @@
+{% extends 'logs.html' %}
+{% block body %} 
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+      <h2 class="active"> Sign In </h2>
+      <h2 class="inactive underlineHover">Sign Up </h2>
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="https://icons.veryicon.com/png/System/Icons8%20Metro%20Style/User%20Role%20Reviewer.png" id="icon" alt="User Icon" />
+      </div>
+      <div>
+        {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for msg in messages %}
+                    <p>{{ msg }}</p>
+                    {% endfor %}
+                {% endif%}
+            {% endwith %}
+      </div>
+      <!-- Login Form -->
+      <form action="#" method="POST">
+        <input type="text" id="login" class="fadeIn second" name="username" placeholder="Username">
+        <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password">
+        <input type="submit" class="fadeIn fourth" value="submit">
+      </form>
+  
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
+      </div>
+  
+    </div>
+  </div>
+  {% endblock %}
