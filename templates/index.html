@@ -78,12 +78,12 @@
     <p class="secsubtitle">Check out some of my work</p>
     <div class="mywork">
         <!--Project 1-->
-        <a href="portfolio-page.html" class="work_piece">
+        <a href="{{url_for('portfolio')}}" class="work_piece">
             <img src="{{url_for('static', filename='img/img1.jpg')}}"  alt="My first project" class="workpiece_img">
         </a>
 
         <!--Project 2-->
-        <a href="portfolioII-page.html" class="work_piece">
+        <a href="{{url_for('portfolioII')}}" class="work_piece">
             <img src="{{url_for('static', filename='img/img2.jpg')}}"  alt="My second project" class="workpiece_img">
         </a>
 
@@ -161,4 +161,3 @@
 
 <!--page footer-->
 {% endblock %}
-        
